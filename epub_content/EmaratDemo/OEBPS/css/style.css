@@ -1,0 +1,137 @@
+/* CSS Document */
+
+body
+{
+	line-height:30px;
+	
+}
+/*Titles*/
+.greenTitle
+{
+
+	text-align:right;
+	font-size:22px;
+	color:#8dc73f;
+	font-weight:bold;
+	margin-bottom:10px;
+	margin-top:10px;
+}
+
+.orangeTitle
+{
+	
+	text-align:right;
+	font-size:22px;
+	color:#f7931e;
+	font-weight:bold;
+	margin-bottom:10px;
+	margin-top:10px;
+}
+
+.redTitle
+{
+    text-align:right;
+	font-size:18px;
+	color:#ed1c24;
+	font-weight:bold;
+	margin-bottom:10px;
+	margin-top:10px;	
+}
+
+
+/*activities*/
+
+.active
+{
+	text-align:right;
+	font-size:17px;
+	color:#a71c20;
+	font-weight:bold;
+}
+
+
+/*moreInfo*/
+
+.moreInfo
+{
+	line-height:38px;
+	text-align:right;
+	font-size:20px;
+	color:#0095d3;
+	font-style:normal;
+	margin-bottom:10px;
+	margin-top:10px;
+	text-align:justify;
+	font-weight:bold;
+}
+
+/*text*/
+
+.blackText
+{
+	text-align:right;
+	font-size:18px;
+	color:#231f20;
+	font-style:normal;
+	text-align:justify;
+}
+
+
+.orangeText
+{
+	text-align:right;
+	font-size:18px;
+	color:#39F;
+	font-style:normal;
+	text-align:justify;
+}
+
+
+.redText
+{
+	text-align:right;
+	font-size:18px;
+	color:#ed1c24;
+	font-style:normal;
+	text-align:justify;
+}
+
+.greenText
+{
+	text-align:right;
+	font-size:18px;
+	color:#00ac5c;
+	font-style:normal;
+	text-align:justify;
+}
+
+
+
+p
+{
+	margin:0.1em;
+}
+table,td,tr
+{
+border:thin solid #666;
+}
+
+/***********************************************/
+a:link {
+	color:blue;
+	text-decoration:underline ;
+}
+a:visited {
+    color: blue;
+    text-decoration:underline;
+}
+
+a:active {
+    color:red;
+    text-decoration:underline;
+}
+
+a:hover {
+    color:red;
+    text-decoration:underline;
+}

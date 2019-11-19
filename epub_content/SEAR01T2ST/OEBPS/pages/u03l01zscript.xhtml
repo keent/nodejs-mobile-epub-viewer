@@ -1,0 +1,302 @@
+<html dir="rtl" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8"/>
+
+<script src="../scripts/easeljs-0.5.0.min.js"></script>
+<script src="../scripts/movieclip-0.5.0.min.js"></script>
+<script src="../scripts/tweenjs-0.3.0.min.js"></script>
+
+<script src="quiz.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+window.addEventListener("load",init,false);
+
+var canvas, stage, exportRoot, txt;
+var writeAns=" ";
+var chosenAnswer;
+var chosenMc;
+var counter=0;
+
+var doesHeChoose=0;
+
+var totalRightAns=0;
+
+var arr=[];
+var qArray=
+[
+{q:"حتَّى لا تُؤلِمَنا مَعدتُنَا علينا أنْ ..............  .",
+								s0:"نأكلَ الطَّعامَ الَّذِي نُحبُّه",
+								s1:" نشربَ ماءً كثيرًا",
+								s2:"نَمضغَ الطَّعامَ جيِّدًا",
+								writeAnswer:"mc2"},
+								
+{q:"(اثْنِ طَرَفَ الورقةِ الأَعْلَى مِنَ اليَمِينِ إلى اليَسَارِ) مُضادُّ كلمةِ (الأَعْلَى) هو ....... .",
+								s0:"الأَيْسَر",
+								s1:"الأَسْفَل",
+								s2:"الأَيْمَن",
+								writeAnswer:"mc1"},
+								
+{q:"قَبْلَ أنْ نُصلِّيَ علينا أنْ ............ .",
+								s0:"نَأكلَ",
+								s1:"نَلعبَ",
+								s2:"نَتوضَّأَ",
+								writeAnswer:"mc2"},
+								
+{q:"الكلمةُ الَّتِي يَختلِفُ حرفُهَا الأوَّلُ عنْ باقِي الكلماتِ هي .......... .",
+								s0:"فَراشة",
+								s1:"فَجر",
+								s2:"قَمر",
+								writeAnswer:"mc2"},
+
+{q:"يا حَمَدُ، .......... تَسْكُنُ؟ .",
+								s0:"مَتَى",
+								s1:"أَيْنَ",
+								s2:"هَلْ",
+								writeAnswer:"mc1"},								
+								
+								
+																																																							
+]
+
+
+
+//--------------- cheak array --------------
+
+for(var l=0;l<qArray.length;l++)
+{
+	arr.push({chek:0,ans:0});
+}
+
+
+
+
+//------------------------------------------
+function init() {
+	
+
+	
+	canvas = document.getElementById("canvas");
+	txt=  document.getElementById("qNum");
+	exportRoot = new lib.quiz();
+
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);
+	createjs.Touch.enable(stage);
+	stage.update();
+
+	createjs.Ticker.setFPS(24);
+	createjs.Ticker.addListener(stage);
+	
+	//------------------
+	
+	exportRoot.questionTxt.x=500;
+	exportRoot.questionTxt.textAlign= "right";
+	exportRoot.questionTxt.lineHeight=45;
+	for(var i=0;i<3;i++)
+	{
+	exportRoot["c"+i].x=420;
+	exportRoot["c"+i].textAlign= "right";	
+	}
+	
+	
+	for(var l=0;l<3;l++)
+	{
+	exportRoot["mc"+l].onPress=onPressHandler;
+	exportRoot["mc"+l].selectedAnswer="mc"+l;
+	}
+	
+	exportRoot.cheakAnswerBtn.onPress=cheakAnswerPressed;
+	exportRoot.cheakAnswerBtn.tween;
+	exportRoot.next.onClick=nextHandler;
+	exportRoot.prev.onClick=prevHandler;
+	
+	exportRoot.tryAgain.onPress=tryAgainPressed;
+	exportRoot.tryAgain.tween;
+	
+	
+	txt.innerHTML = ' السؤال رقم '+(counter+1)+' من '+ qArray.length;
+	
+	createQ(0);
+	
+}
+
+
+function onPressHandler(e)
+{
+	
+	createjs.Tween.removeTweens(e.target);
+	e.target.scaleX=e.target.scaleY=0.7;
+	e.onMouseUp = function(eu)
+	{
+		resetOption();
+		e.target.gotoAndStop(1);
+		chosenAnswer=e.target.selectedAnswer;
+		chosenMc=e.target;
+		createjs.Tween.get(eu.target,{override:true}).to({scaleX:1,scaleY:1},700,createjs.Ease.elasticOut);
+		doesHeChoose=1;
+	}
+	
+	if(arr[counter].chek==0)
+	{
+	 arr[counter].ans=e.target.selectedAnswer;	
+	}
+	
+}
+
+function createQ(id)
+{
+	exportRoot.questionTxt.text=qArray[id].q;
+	exportRoot.c0.text=qArray[id].s0;
+	exportRoot.c1.text=qArray[id].s1;
+	exportRoot.c2.text=qArray[id].s2;
+	writeAns=qArray[id].writeAnswer;
+}
+
+function resetOption()
+{
+	chosenAnswer="";
+	chosenMc="";
+	doesHeChoose=0
+	for(var i=0;i<3;i++)
+	{
+	exportRoot["mc"+i].gotoAndStop(0);	
+	}
+}
+
+function cheakAnswer()
+{
+	if(doesHeChoose==1)
+	{
+		
+		arr[counter].chek=1;
+		
+		if(chosenAnswer==writeAns)
+		{
+		chosenMc.gotoAndStop(2);	
+		}
+		else
+		{
+		chosenMc.gotoAndStop(3);
+		
+		//--- search for the right answer ------
+			for(var i=0;i<3;i++)
+			{
+				if(exportRoot["mc"+i].selectedAnswer==writeAns)
+				{
+					exportRoot["mc"+i].gotoAndStop(2);
+				}
+			}
+		
+		}
+	}
+}
+
+function nextHandler(e)
+{
+	if(counter<(qArray.length-1))
+	{
+	counter +=1;
+	resetOption();
+	createQ(counter);
+	txt.innerHTML = ' السؤال رقم '+(counter+1)+' من '+ qArray.length;
+	
+	}
+	else
+	{
+	exportRoot.gotoAndStop(1);
+	getRightAns();
+	}
+}
+
+function prevHandler(e)
+{
+	if(counter>0)
+	{
+	counter -=1;
+	resetOption();
+	createQ(counter);
+	txt.innerHTML = ' السؤال رقم '+(counter+1)+' من '+ qArray.length;
+	}
+}
+
+
+function cheakAnswerPressed(e)
+{
+	e.target.scaleX=e.target.scaleY=0.7;
+	createjs.Tween.removeTweens(e.target);
+	e.onMouseUp = function(eu)
+	{
+		createjs.Tween.get(eu.target,{override:true}).to({scaleX:1,scaleY:1},700,createjs.Ease.elasticOut);
+		cheakAnswer()
+	}
+}
+
+
+function tryAgainPressed(e)
+{
+	e.target.scaleX=e.target.scaleY=0.7;
+	createjs.Tween.removeTweens(e.target);
+	e.onMouseUp = function(eu)
+	{
+		createjs.Tween.get(eu.target,{override:true}).to({scaleX:1,scaleY:1},700,createjs.Ease.elasticOut);
+		tryAgainHandller()
+	}
+}
+
+
+function getRightAns()
+{
+	for(var i=0;i<qArray.length;i++)
+	{
+		if(arr[i].ans==qArray[i].writeAnswer)
+		{
+		totalRightAns +=1;	
+		}
+		
+	}
+	exportRoot.totalTxt.text=String(qArray.length);
+	exportRoot.trueTxt.text=String(totalRightAns);
+	exportRoot.falseTxt.text=String(qArray.length-Number(totalRightAns));
+}
+
+
+function tryAgainHandller()
+{
+resetHoleQuiz()
+}
+
+
+function resetHoleQuiz()
+{
+
+totalRightAns=0;
+for(var l=0;l<qArray.length;l++)
+{
+	arr[l].chek=0;
+	arr[l].ans=0;
+}
+resetOption();
+counter=0
+txt.innerHTML = ' السؤال رقم '+(counter+1)+' من '+ qArray.length;
+exportRoot.gotoAndStop(0);
+createQ(counter);	
+}
+
+
+//]]>
+</script>
+
+</head>
+
+<body style="background-color:#ffffff">
+	<div style="text-align:center;">
+	<p style="font-size:22px;color:#8dc73f;font-weight:bold;margin-bottom:1em;">التدريبات</p>
+	<p style="font-size:22px; color:#800080">اخترِ الإجابةَ الصَّحيحةَ منْ بينِ البدائلِ الآتيةِ</p>
+	<p id="qNum" style="font-size:14px; color:#adaca3;">السؤال رقم 1 من </p>
+	<canvas id="canvas" width="550" height="600" style="background-color:#ffffff">
+	    Your browser does not support the video tag and HTML5.
+	</canvas>
+       </div>
+</body>
+</html>

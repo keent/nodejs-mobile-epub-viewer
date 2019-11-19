@@ -1,0 +1,29 @@
+[
+    {
+        "title" : "لغة عربية - المستوى الأول",
+        "author" : "",
+        "coverHref" : "epub_content/SEAR01T2ST/OEBPS/images/000.jpg",
+        "packagePath" : "OEBPS/package.opf",
+        "rootUrl" : "epub_content/SEAR01T2ST"
+    },
+    {
+        "title" : "Emarat Demo",
+        "author" : "علوم - الصف السابع",
+        "coverHref" : "epub_content/EmaratDemo/OEBPS/images/cover.jpg",
+        "packagePath" : "OEBPS/package.opf",
+        "rootUrl" : "epub_content/EmaratDemo"        
+    },
+    {
+        "title" : "Accessible EPUB 3",
+        "author" : "Matt Garrish",
+        "coverHref" : "epub_content/accessible_epub_3/EPUB/covers/9781449328030_lrg.jpg",
+        "packagePath" : "EPUB/package.opf",
+        "rootUrl" : "epub_content/accessible_epub_3"
+    },
+    {
+        "title" : "A First Course in Linear Algebra",
+        "author" : "Robert A. Beezer",
+        "packagePath" : "EPUB/package.opf",
+        "rootUrl" : "epub_content/linear-algebra"
+    }
+]

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/"
+     version="2005-1">
+    <head>
+        <meta name="cover" content="image1"/>
+        <meta name="dtb:uid" content="urn:isbn:978-900-6422-16-2"/>
+    </head>
+    
+	<docTitle>
+		<text>الفهرس</text>
+	</docTitle>
+	<navMap>
+	
+	    <navPoint id="u01" playOrder="1">
+			<navLabel>
+				<text>الْوَحْدَةُ الْأولَى (النُّصُوصُ الْمَعْلُومَاتِيَّةُ)</text>
+			</navLabel>
+			<content src="../pages/u01.xhtml"/>
+		</navPoint>
+
+	    <navPoint id="u02" playOrder="2">
+			<navLabel>
+				<text>الْوَحْدَةُ الثَّانِيَةُ (نُصُوصُ الْأَشْعَارِ وَالْأَنَاشِيدِ)</text>
+			</navLabel>
+			<content src="../pages/u02.xhtml"/>
+		</navPoint>
+
+	    <navPoint id="u03" playOrder="3">
+			<navLabel>
+				<text>الْوَحْدَةُ الثَّالِثَةُ ( نُصُوصُ التَّعْلِيمَاتِ )</text>
+			</navLabel>
+			<content src="../pages/u03.xhtml"/>
+		</navPoint>
+
+	    <navPoint id="u04" playOrder="4">
+			<navLabel>
+				<text>الْوَحْدَةُ الرَّابِعَةُ ( النُّصُوصُ السَّرْدِيَّةُ الْقَصَصِيَّةُ )</text>
+			</navLabel>
+			<content src="../pages/u04.xhtml"/>
+		</navPoint>
+
+
+		
+	</navMap>
+</ncx>

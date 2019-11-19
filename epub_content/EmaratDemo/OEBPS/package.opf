@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package
+	 xmlns="http://www.idpf.org/2007/opf"
+	 version="3.0"
+	 unique-identifier="pub-identifier"
+	 xml:lang="ar"
+	 id="package">
+         
+         
+<metadata xmlns:dc="http://purl.org/dc/elements/1.1/"
+	  xmlns:opf="http://www.idpf.org/2007/opf">
+   
+    <dc:title> علوم - الصف السابع </dc:title>
+    <dc:creator>المتحدة جروب</dc:creator>
+    <dc:publisher>الإمارات العربية المتحدة | وزارة التربية والتعليم</dc:publisher>
+    <dc:date>2012</dc:date>
+    <dc:language>ar</dc:language>
+    
+    <dc:identifier id="pub-identifier">urn:isbn:978-900-6422-13-1</dc:identifier>
+    <meta property="dcterms:modified">2012-04-12T12:00:00Z</meta>
+    
+    <meta name="cover" content="cover"/>
+    
+</metadata>
+
+
+<manifest>
+     
+     
+     
+     <item href="../META-INF/com.apple.ibooks.display-options.xml" id="gogo" media-type="text/xml"/>
+     <item href="css/style.css" id="stylesheet" media-type="text/css"/>
+     <item href="Navigation/toc.ncx" id="ncx" media-type="application/x-dtbncx+xml" />
+     <item id="nav" href="Navigation/nav.xhtml" properties="nav" media-type="application/xhtml+xml"/> 
+     
+     <item href="scripts/easeljs-0.5.0.min.js" id="script1" media-type="text/javascript"/>
+     <item href="scripts/movieclip-0.5.0.min.js" id="script2" media-type="text/javascript"/>
+     <item href="scripts/tweenjs-0.3.0.min.js" id="script3" media-type="text/javascript"/>
+     <item href="scripts/header.js" id="script4" media-type="text/javascript"/>
+
+<item href="pages/page00.xhtml" id="page00" media-type="application/xhtml+xml" />
+<item href="pages/page01.xhtml" id="page01" media-type="application/xhtml+xml" />
+<item href="pages/page02.xhtml" id="page02" media-type="application/xhtml+xml" properties="scripted" />
+<item href="pages/page03.xhtml" id="page03" media-type="application/xhtml+xml" />
+
+<!-- interactive -->
+
+<item href="pages/magObject.js" id="scr1" media-type="text/javascript"/>
+<item href="pages/mag.js" id="scr2" media-type="text/javascript"/>
+
+
+<item href="pages/bg.jpg" id="bg0" media-type="image/jpeg"/>
+<item href="pages/m1.png" id="bg1" media-type="image/png"/>
+<item href="pages/m2.png" id="bg2" media-type="image/png"/>
+
+<!-- videos -->
+
+<item id="video02" href="videos/v02.mp4" media-type="video/mpeg4"/>
+<item id="video03" href="videos/V03.mp4" media-type="video/mpeg4"/>
+<item id="video04" href="videos/v04.mp4" media-type="video/mpeg4"/>
+<item id="video05" href="videos/v05.mp4" media-type="video/mpeg4"/>
+<item id="video06" href="videos/v06.mp4" media-type="video/mpeg4"/>
+
+<!-- images -->
+
+<item href="images/cover.jpg" id="cover" media-type="image/jpeg"/>
+
+<item href="images/00.jpg" id="im00" media-type="image/jpeg"/>
+<item href="images/01.jpg" id="im01" media-type="image/jpeg"/>
+<item href="images/02.jpg" id="im02" media-type="image/jpeg"/>
+<item href="images/03.jpg" id="im03" media-type="image/jpeg"/>
+<item href="images/04.jpg" id="im04" media-type="image/jpeg"/>
+<item href="images/05.jpg" id="im05" media-type="image/jpeg"/>
+<item href="images/06.jpg" id="im06" media-type="image/jpeg"/>
+<item href="images/07.jpg" id="im07" media-type="image/jpeg"/>
+
+
+</manifest>
+
+<spine toc="ncx" page-progression-direction="rtl">
+      
+<itemref idref="page00"/>     
+<itemref idref="page01"/>
+<itemref idref="page02"/>
+<itemref idref="page03"/>
+
+</spine>
+
+
+
+</package>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display_options>
+<!-- Supported values for platform name: "*", "iphone", "ipad"; "iphone" applies to ipod touch as well; note all-lowercase -->
+<platform name="*">
+<!-- allowed values for "fixed-layout" are either "true" or "false" (with "false" as the default when unspecified) -->
+<option name="fixed-layout">false</option>
+<!-- allowed values for "open-to-spread" are either "true" or "false" (with "false" as the default when unspecified) -->
+<option name="open-to-spread">true</option>
+<option name="orientation-lock">portrait-only</option>
+</platform>
+<platform name="iphone">
+<!-- allowed values for "orientation-lock" are "portrait-only", "landscape-only", or "none" (with "none" as default when unspecified) -->
+<option name="orientation-lock">portrait-only</option>
+</platform>
+</display_options>
+

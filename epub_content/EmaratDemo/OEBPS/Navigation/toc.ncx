@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/"
+     version="2005-1">
+    <head>
+        <meta name="cover" content="image1"/>
+        <meta name="dtb:uid" content="urn:isbn:978-900-6422-13-1"/>
+    </head>
+    
+	<docTitle>
+		<text>الفهرس</text>
+	</docTitle>
+	<navMap>
+	    
+	    
+	    <navPoint id="u01" playOrder="1">
+			<navLabel>
+				<text> المغانط والمغنطيسية  </text>
+			</navLabel>
+			<content src="../pages/page01.xhtml"/>
+	    </navPoint>
+	
+	    <navPoint id="u02" playOrder="2">
+			<navLabel>
+				<text> القوة المغناطيسية - عنصر تفاعلي </text>
+			</navLabel>
+			<content src="../pages/page02.xhtml"/>
+	    </navPoint>
+	    
+	    
+
+	</navMap>
+</ncx>

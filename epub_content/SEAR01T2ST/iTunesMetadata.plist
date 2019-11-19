@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>artistName</key>
+	<string>المتحدة جروب</string>
+	<key>book-info</key>
+	<dict>
+		<key>cover-image-hash</key>
+		<string>823C0A633794FCE10F3A899F5440B474</string>
+		<key>cover-image-path</key>
+		<string>OEBPS/images/000.jpg</string>
+		<key>mime-type</key>
+		<string>application/epub+zip</string>
+		<key>package-file-hash</key>
+		<string>AE7480E4A4AFBCBCB9AE6F8A508C3D0A</string>
+		<key>page-progression-direction</key>
+		<string>rtl</string>
+		<key>publisher-unique-id</key>
+		<string>urn:isbn:978-900-6422-16-2</string>
+		<key>unique-id</key>
+		<integer>-1860050309864558361</integer>
+		<key>update-level</key>
+		<integer>2</integer>
+	</dict>
+	<key>itemName</key>
+	<string>لغة عربية - المستوى الأول</string>
+	<key>playlistName</key>
+	<string>لغة عربية - المستوى الأول</string>
+	<key>releaseDate</key>
+	<string>2012</string>
+</dict>
+</plist>
